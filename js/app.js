@@ -153,18 +153,12 @@ const showPosts = (posts) => {
 
 const displayLikedPosts = () => {
   const likedPosts = getLikedPosts();
-  likedPosts.forEach((post) => {
-    const div = createPost(post);
-    document.getElementById("liked").appendChild(div);
-  });
+  renderSpecialPosts(likedPosts, "liked");
 };
 
 const displayReportedPosts = () => {
   const reportedPosts = getReportedPosts();
-  reportedPosts.forEach((post) => {
-    const div = createPost(post);
-    document.getElementById("reported").appendChild(div);
-  });
+  renderSpecialPosts(reportedPosts, "reported");
 };
 
 const loadPosts = async () => {
@@ -172,5 +166,15 @@ const loadPosts = async () => {
   posts = await data.json();
   showPosts(posts);
 };
+
+function renderSpecialPosts(specialPosts, id) {
+  const postsContainer = document.getElementById(id);
+  postsContainer.textContent = "";
+
+  specialPosts.forEach((post) => {
+    const div = createPost(post);
+    postsContainer.appendChild(div);
+  });
+}
 
 loadPosts();
