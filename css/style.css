@@ -238,10 +238,10 @@ img {
   color: gray;
 }
 
-#liked{
+#liked-posts-container{
   display: none;
 }
-#reported{
+#reported-posts-container{
   display: none;
 }
 
