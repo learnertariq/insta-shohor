@@ -117,7 +117,26 @@
       <article class="q-container">
         <h4 class="q-heading">Q2: What does JavaScript Event Loop do?</h4>
         <div class="q-ans">
-          <p></p>
+          <p>
+            Chrome's V8 engine has 2 things called
+            <strong>"heap and stack"</strong>. When JS engine call a function it
+            put the function on top of the <strong>"stack"</strong>. If the
+            function has anything <strong>"asynchronous"</strong>, JS engine
+            push the <strong>"callBack function"</strong> to the <strong>"Web API"</strong> block with setting a <strong>"timer"</strong>. then
+            after timer finished meaning that when data is successfully
+            processed, the function is put on the <strong>"task queue"</strong>.
+            Now the fun part begins.
+          </p>
+          <p>
+            After all of the above work when JavaScript callStack is empty,
+            Event loop waits until the stack is empty and push the first
+            function on the stack from the<strong> "task queue"</strong>, and
+            then JS enigne executes that function.
+          </p>
+          <p>
+            Event loop constantly checks if the stack is empty, then the event
+            loop push functions on the stack one by one from the <strong>"task queue"</strong>
+          </p>
         </div>
       </article>
       <article class="q-container">
