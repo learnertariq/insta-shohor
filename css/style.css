@@ -256,3 +256,9 @@ img {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+.q-and-a {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
